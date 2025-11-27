@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            margin-left:370px;
+        }
+        #btn{
+            margin-left:400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>counter</h1>
+    <button id="btn"onclick="action()">0</button>
+    <script>
+      console.log(document.getElementById('btn'))
+      let count=0;
+      function action(){
+        let name=prompt("enetr +,-,reset")
+        switch(name){
+            case '+':
+                count+=1;
+                break;
+            case '-':
+                count-=1
+                break;
+            case 'reset':
+                count=0
+        }
+        let a=document.getElementById("btn")
+        a.textContent=count;
+           if(count == 0){
+            a.style.backgroundColor="black"
+        }
+        else if(count>0){
+            a.style.backgroundColor="green"
+        }
+        else{
+            a.style.backgroundColor="red"
+        }
+      }
+     
+    </script>
+</body>
+</html>
