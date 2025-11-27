@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>ADD TO CART</h1>
+    <div><input type="text" placeholder="enteryour item" id="in">
+    <button id="btn" onclick="add()">ADD</button></div>
+    <script>
+        let arr=["apple","banana","pine apple"]
+        div_ele=document.createElement("div")
+        let input_ele=document.getElementById("in")
+        function display(){
+            div_ele.innerHTML=""
+            for(let i=0;i<arr.length;i++){
+            let para=document.createElement("div")
+            let del_btn=document.createElement("button")
+            del_btn.innerHTML="delete"
+            del_btn.onclick=function(){
+                arr.splice(i,1)
+                display()
+            }
+            para.innerHTML=arr[i]
+            para.appendChild(del_btn)
+            div_ele.appendChild(para)
+        }
+        }
+        display()
+        document.body.appendChild(div_ele)
+        function add(){
+            arr.push(input_ele.value)
+            console.log(arr)
+           display()
+           input_ele.value=""
+
+        }
+    </script>
+</body>
+</html>
