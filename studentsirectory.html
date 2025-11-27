@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student={
+            name:"srinu",
+            age:40,
+            marks:98,
+            skills:["python","css","js","html"],
+            address:{
+                city:"kanigit",
+                pincode:523227
+            }
+
+        }
+        let show=document.createElement("button")
+        let div_ele=document.createElement("div")
+        show.innerHTML="Show Students"
+        document.body.append(show)
+        show.onclick=function action(){
+            for(let i in student){
+                let p=document.createElement("p")
+                p.innerHTML=[i,student[i]]
+                div_ele.appendChild(p)
+                console.log(div_ele)
+                // if(typeof i!=Object){
+                //     console.log("true")
+                //     let p=document.createElement("p")
+                // p.innerHTML=[i,student[i]]
+                // div_ele.appendChild(p)
+                // console.log(div_ele)    
+                // }
+            }
+        }
+        document.body.append(div_ele)
+    </script>
+</body>
+</html>
