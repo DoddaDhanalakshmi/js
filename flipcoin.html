@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <button onclick="head_tail()" >TOSS COIN</button>
+    <img src="" id="coin" alt="" height="100px">
+    <audio id="sound"src="./coin-flip-37787.mp3" autoplay></audio>
+    <script>
+        function head_tail(){
+            let coin=document.getElementById("coin")
+            let sou=document.getElementById("sound")
+            sou.play()
+           let res = Math.random() * 10;
+           let rn=Math.round(res)
+           if(rn%2==0){
+            coin.src='https://tools360.net/tool-assets/fun-tools/images/head_coin.png'
+           }
+           else{
+           coin.src="https://tools360.net/tool-assets/fun-tools/images/tail_coin.png"
+           }
+        }
+        
+    </script>
+</body>
+</html>
