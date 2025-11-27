@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+  <i class="glyphicon glyphicon-remove" id="int"></i>
+    <button id="btn1" >red</button>
+    <button id="btn2">blue</button>
+    <button id="btn3">green</button>
+    <button id="btn4">yellow</button>
+    <button id="btn5">pink</button>
+    <button id="btn6">clear</button>
+    <script>
+        let ele=document.createElement("div")
+        ele.style.height="200px";
+        ele.style.marginTop="100px";
+        ele.style.width="100%";
+        ele.style.gap="10px";
+        ele.style.display="flex";
+        
+        
+    //     let a= document.getElementById("btn1").style.backgroundColor="red"
+    //    let b= document.getElementById("btn2").style.backgroundColor="blue"
+    //     let c=document.getElementById("btn3").style.backgroundColor="green"
+    //    let d= document.getElementById("btn4").style.backgroundColor="yellow"
+    //    let e=  document.getElementById("btn5").style.backgroundColor="pink"
+     let a=document.getElementsByTagName("button")
+     for(let i of a){
+        if (i.innerHTML!="clear"){
+        i.style.backgroundColor=i.innerHTML
+        i.onclick=function(){
+           var b=document.createElement("div");
+           b.style.height="100px";
+           b.style.width="100px";
+           b.style.backgroundColor=i.innerHTML
+           ele.appendChild(b)
+        }
+        }
+        else {
+              i.onclick=function(){
+                ele.innerHTML=""
+              }
+        }
+    }
+     
+     document.body.append(ele)
+    </script>
+</body>
+</html>
