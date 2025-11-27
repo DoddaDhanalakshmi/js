@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    
+        <input type="text" placeholder="enter item" id="in"><br>
+    <div>
+        <button id="btn" onclick="firstadd()" >ADD FIRST</button>
+        <button id="btn" onclick="lastadd()">ADD LAST</button>
+    </div><br>
+    <div>
+        <button id="btn" onclick="deletefirst()">DELETE FIRST</button>
+        <button id="btn" onclick="deletelast()">DELETE LAST</button>
+    </div>
+    
+    <script>
+        let div_ele=document.createElement("div")
+        let arr=[]
+        let ele=document.createElement("div")
+        let input_ele=document.getElementById("in")
+        function lastadd(){
+             div_ele.innerHTML=""
+             arr.push(input_ele.value)
+             for(let i of arr){
+                let ele=document.createElement("p")
+                ele.innerHTML=i
+                div_ele.appendChild(ele)
+                input_ele.value=""
+             }
+              
+        }
+        function firstadd(){
+            div_ele.innerHTML=""
+            arr.unshift(input_ele.value)
+            for(let i of arr){
+                 let ele=document.createElement("p")
+                ele.innerHTML=i
+                div_ele.append(ele)
+                input_ele.value=""
+            }
+             
+        }
+          function deletefirst(){
+            arr.shift()
+            div_ele.innerHTML=""
+             for(let i of arr){
+                    let ele=document.createElement("p")
+                ele.innerHTML=i
+                div_ele.append(ele)
+                }
+        }
+        function deletelast(){
+                arr.pop()
+                div_ele.innerHTML=""
+                for(let i of arr){
+                    let ele=document.createElement("p")
+                ele.innerHTML=i
+                div_ele.append(ele)
+                }
+           
+        }
+       document.body.appendChild(div_ele)
+    </script>
+</body>
+</html>
